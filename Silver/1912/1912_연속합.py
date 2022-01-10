@@ -25,9 +25,13 @@ print(max(arr_sum))
 # arr_sum = [0] * n
 # arr_sum[0] = arr[0]
 # for i in range(1, n):
-#     if
-#     elif
-#     elif
+#     if arr_sum[i-1] >0 and arr[i] >0 : 
+#         arr_sum[i] = arr_sum[i-1] + arr[i]
+#     elif arr_sum[i-1] >0 and arr[i] <0 :
+#         arr_sum[i] = arr_sum[i-1] + arr[i]
+#     elif arr_sum[i-1] <0 and arr[i] >0 :
+#         arr_sum[i] =  arr[i]
 #     else
+#         arr_sum[i] = arr[i]
         
 # print(max(arr_sum))
