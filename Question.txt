@@ -1,0 +1,34 @@
+1463 : 동적 계획
+
+11053 : DP
+1912 : DP
+
+2606 : bfs
+1260 : bfs, dfs
+11725 : bfs, dfs
+11724 : bfs, dfs    --  시간초과?
+
+
+
+
+
+##### 시간 줄이기 #####
+1. 매줄 출력해야 하면 따로 출력 리스트에 합쳐 하나로 출력하기
+
+s = ''
+for i in dfs(V):
+    s += (str(i)+ ' ')
+print(s)
+
+# for i in dfs(V):
+#     print(i, end= ' ') 
+
+
+2. append를 해야되는 경우 미리 리스트를 만들어 두고 index를 통해 접근하는 것이 좋음
+li = [0] * n
+for i in range(n):
+	li[i] = int(sys.stdin.readline())
+
+# li = [0] * n
+# for i in range(n):
+#	li[i] = int(sys.stdin.readline())
