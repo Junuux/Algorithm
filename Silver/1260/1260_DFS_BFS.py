@@ -22,9 +22,9 @@ def dfs(start):
         if dfs_check[i] == 0:
             dfs(i)
     return dfs_route
-
 for i in dfs(V):
     print(i, end= ' ')
+  
     
 def bfs(start):
     q = deque()
@@ -36,10 +36,11 @@ def bfs(start):
             bfs_route.append(a)
             q.extend(graph[a])
     return bfs_route
-
 print()
+s = ''
 for i in bfs(V):
-    print(i, end= ' ')
+    s += (str(i)+ ' ')
+print(s)
         
 #####################################
 # 처음 짠 코드
