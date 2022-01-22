@@ -1,5 +1,6 @@
-x, y = input().split('.')
-print(x)
-print('!')
-print(y)
-print('@')
+import sys
+input = sys.stdin.readline
+
+S = input().rstrip()
+
+print(S)
