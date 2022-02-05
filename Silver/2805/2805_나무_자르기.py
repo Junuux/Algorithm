@@ -1,28 +1,23 @@
 import sys
 input = sys.stdin.readline
 
-N, M = map(int,input().split()) # 나무 수, 필요한 나무 길이
-trees = list(map(int, input().split()))
+N, M = map(int, input().split())
+height = list(map(int, input().split()))
+s, e = 1, max(height)
 
-start, end = 0, max(trees) # 시작 점, 끝점
-
-# 이분 탐색
-while start <= end:
-    mid = (start+end)//2
-    tree = 0 # 잘린 나무 합
-    for i in trees:
-        if i > mid: # mid보다 큰 나무 높이는 잘림
-            tree += i - mid
-
-    if tree >= M: # 원하는 나무 높이보다 더 많이 잘렸으면
-        start = mid + 1
-    else: # 원하는 나무 높이보다 덜 잘렸으면
-        end = mid - 1
-print(end)
-
+while e-s >=0:
+    mid = (s+e)//2
+    tree = 0
+    for i in height:
+        tree += max(i-mid, 0)
+    if tree >= M:
+        s = mid +1
+    else:
+        e = mid -1
+print(e)
 
 #################################################
-# 왜 시간 초과인지???
+# Pyhon3에서는 시간초과 발생 => PyPy3에서는 잘 돌아감
 
 import sys
 input = sys.stdin.readline
@@ -38,7 +33,30 @@ while end >= start:
         if i > mid:
             tree += (i-mid)
     if tree >= M:
-        start = mid
+        start = mid+1
     else:
-        end = mid
+        end = mid-1
+print(end)
+
+#################################################
+
+import sys
+input = sys.stdin.readline
+
+N, M = map(int,input().split()) 
+trees = list(map(int, input().split()))
+
+start, end = 0, max(trees) 
+
+while start <= end:
+    mid = (start+end)//2
+    tree = 0 
+    for i in trees:
+        if i > mid: 
+            tree += i - mid
+
+    if tree >= M: 
+        start = mid + 1
+    else:
+        end = mid - 1
 print(end)

@@ -23,6 +23,7 @@ while (w_e - w_s) >= 10**(-6) :
         w_e = mid
     res_w = mid
 print(res_w)
+
 #######################################
 import sys
 input = sys.stdin.readline
