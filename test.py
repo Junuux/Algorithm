@@ -1,5 +1,6 @@
 import sys
 input = sys.stdin.readline
-bud = [int(input()) for _ in range(4)]
 
-print(bud)
+names = [input().split() for i in range(3)]
+
+print(names)
